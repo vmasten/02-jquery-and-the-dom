@@ -1,0 +1,58 @@
+@media (min-width: 641px) {
+
+  .icon-menu {
+    display: none;
+  }
+  .nav-icons li {
+    padding-right: 20px;
+  }
+  .heading-group-h1 h1 {
+    padding-top: 10px;
+  }
+ }
+ 
+ @media (max-width: 640px) {
+  .article-body img {
+    width: 100%;
+  }
+ 
+input.burger-checkbox[type=checkbox] {
+  position: absolute;
+  top: 2%;
+  left: 95%;
+}
+
+  .icon-menu {
+    font-size: 2em;
+    text-decoration: none;
+    color: black;
+    position: absolute;
+    top: 0%;
+    left: 94%;
+  }
+  .nav-icons {
+    display: none;
+  }
+ 
+ .icon-menu:checked ~ ul{
+    display: block;
+    margin-right:30px;
+ 
+  }
+  .icon-menu:checked ~ ul li {
+    display: block;
+    font-size: 2em;
+    padding-bottom: 5px;
+    border-bottom: 2px solid rgb(136, 136, 136);
+    margin-bottom: 10px;
+  }
+ 
+  .heading-group-h1 h1 {
+    display: inline-block;
+    margin-right: 40%;
+    padding-top: 10px;
+  }
+  .heading-group-h1 {
+    position: relative;
+  }
+ }
