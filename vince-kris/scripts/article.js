@@ -3,16 +3,22 @@
 let articles = [];
 
 // COMMENT: What is the purpose of the following function? Why is its name capitalized? Explain the context of "this" within the function. What does "rawDataObj" represent?
-// PUT YOUR RESPONSE HERE
+// The purpose of this function is to create a new "Article" object by passing a value from the rawData array in blogArticles.js and taking its properties. "Article" is capitalized because it is a contructor funtion. "this" refers to object properties of the new Article object which are taken from the passed rawDataObj. "rawDataObj" represents an object pulled from the rawData array within the blogArticles.js.
 
 function Article (rawDataObj) {
   // TODO: Use the JS object that is passed in to complete this constructor function:
   // Save ALL the properties of `rawDataObj` into `this`
+  this.title = rawDataObj.title;
+  this.category = rawDataObj.category;
+  this.author = rawDataObj.author;
+  this.authorUrl = rawDataObj.authorUrl;
+  this.publishedOn = rawDataObj.publishedOn;
+  this.body = rawDataObj.body;
 }
 
 Article.prototype.toHtml = function() {
   // COMMENT: What is the benefit of cloning the article? (see the jQuery docs)
-  // PUT YOUR RESPONSE HERE
+  // We can use the .clone() method to modify the elements or their contents before putting them back into our code.
 
   let $newArticle = $('article.template').clone();
   /* TODO: This cloned article still has a class of template. In our modules.css stylesheet, we should give all elements with a class of template a display of none so that our template does not display in the browser. But, we also need to make sure we're not accidentally hiding our cloned article. */
@@ -28,6 +34,12 @@ Article.prototype.toHtml = function() {
       4. article body, and
       5. publication date. */
 
+  $newArticle.find('address a').text(this.author);
+  $newArticle.find('address a').attr(this.authorUrl);
+  $newArticle.find('.template h1').text(this.title);
+  $newArticle.find('.article-body').text(this.body);
+  $newArticle.find('article time').text(this.publishedOn);
+
   // REVIEW: Display the date as a relative number of 'days ago'
   $newArticle.find('time').html('about ' + parseInt((new Date() - new Date(this.publishedOn))/60/60/24/1000) + ' days ago');
   $newArticle.append('<hr>');
@@ -41,10 +53,18 @@ rawData.sort(function(a,b) {
 
 // TODO: Refactor these for loops using the .forEach() array method.
 
-for(let i = 0; i < rawData.length; i++) {
-  articles.push(new Article(rawData[i]));
-}
+rawData.forEach( element => {
+  articles.push(new Article(element));
+});
+// for(let i = 0; i < rawData.length; i++) {
+//   articles.push(new Article(rawData[i]));
+// }
+console.log(rawData);
 
-for(let i = 0; i < articles.length; i++) {
-  $('#articles').append(articles[i].toHtml());
-}
+
+// articles.forEach(function(element) {
+//   $('#articles').append(element.toHtml());
+// });
+// for(let i = 0; i < articles.length; i++) {
+//   $('#articles').append(articles[i].toHtml());
+// }

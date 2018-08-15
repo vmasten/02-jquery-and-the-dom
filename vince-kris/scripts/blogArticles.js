@@ -1,7 +1,7 @@
 'use strict';
 
 // COMMENT: How is this data utilized within our blog app? What is the structure of this data (your response should include the terms "object", "array", and "key/value pairs")?
-// PUT YOUR RESPONSE HERE
+// This data is utilized by grabbing the information stored within the rawData array and making a Article object that has the same properties, which is then used to apply said properties to a section newly cloned in the HTML in order to fill in the content. This data is structer as an array full of objects, each of which has 6 properties, or "key/value pairs"
 
 let rawData = [
   {
