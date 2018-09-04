@@ -14,8 +14,30 @@ This project demonstrates proficiency in using jQuery to render HTML elements to
 Uses HTML/CSS and JavaScript with jQuery
 
 ## Change Log
+Author: Vince Masten <vmasten@me.com>
+Date:   Mon Sep 3 17:02:56 2018 -0700
 
+    refactor/resubmit
+
+Author: Vince Masten <vmasten@me.com>
+Date:   Wed Aug 15 13:36:26 2018 -0700
+
+    done for now
+
+Author: Kris3579 <kristianesvelt@hotmail.com>
+Date:   Wed Aug 15 13:10:34 2018 -0700
+
+    progress
+
+Author: Kris3579 <kristianesvelt@hotmail.com>
+Date:   Wed Aug 15 11:10:53 2018 -0700
+
+    finalized CSS
+
+Author: Vince Masten <vmasten@me.com>
+Date:   Wed Aug 15 10:48:39 2018 -0700
+
+    switching driver/navigator
 
 ## Credits and Collaborations
-<!-- Give credit (and a link) to other people or resources that helped you build this application. -->
--->
+Uses a version of John Cokos' hamburger button demonstration
