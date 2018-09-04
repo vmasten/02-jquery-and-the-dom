@@ -1,6 +1,6 @@
 @media (min-width: 641px) {
 
-  .icon-menu {
+  .icon-menu, .burger-checkbox {
     display: none;
   }
   .nav-icons li {
@@ -37,6 +37,11 @@ nav input[type=checkbox]:checked~ul{
   }
   .nav-icons {
     display: none;
+  }
+
+  nav label {
+    height: 45px;
+    width: 45px;
   }
  
  nav input:checked ~ ul{

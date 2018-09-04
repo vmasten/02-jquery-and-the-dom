@@ -21,7 +21,7 @@
     </section>
     <nav>
       <div class="icon-menu">
-        <label for="burger-checkbox"></label>
+        <label for="burger-checkbox">
       </div>
       <input class="burger-checkbox" type="checkbox">
       <ul class="nav-icons">
@@ -36,12 +36,12 @@
     <section id="articles">
       <article class="template" data-category="cat">
         <header>
-          <h1 class>Title</h1>
+          <h1 class="title">Title</h1>
           <div class="byline">
             By <address><a href="">Author Name</a></address>
             published <time datetime="2000-01-01">Publish Time</time>
             <!-- COMMENT: What is the <time> HTML element used for? How does this connect to our JS files?  -->
-            <!-- PUT YOUR RESPONSE HERE -->
+            <!-- <time> denotes a human-readable time element, which can be used by accessibility devices like screen readers. It's also used by jQuery as a target to append the exact time the article was published to the DOM.-->
           </div>
         </header>
         <section class="article-body"></section>

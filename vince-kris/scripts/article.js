@@ -3,7 +3,8 @@
 let articles = [];
 
 // COMMENT: What is the purpose of the following function? Why is its name capitalized? Explain the context of "this" within the function. What does "rawDataObj" represent?
-// The purpose of this function is to create a new "Article" object by passing a value from the rawData array in blogArticles.js and taking its properties. "Article" is capitalized because it is a contructor funtion. "this" refers to object properties of the new Article object which are taken from the passed rawDataObj. "rawDataObj" represents an object pulled from the rawData array within the blogArticles.js.
+
+// The purpose of this function is to create a new "Article" object by passing a value from the rawData array in blogArticles.js and taking its properties. "Article" is capitalized because it is a constructor funtion. "this" refers to object properties of the new Article object which are taken from the passed rawDataObj. "rawDataObj" represents an object pulled from the rawData array within the blogArticles.js.
 
 function Article (rawDataObj) {
   // TODO: Use the JS object that is passed in to complete this constructor function:
@@ -35,11 +36,11 @@ Article.prototype.toHtml = function() {
       4. article body, and
       5. publication date. */
 
-  $newArticle.find('address a').text(this.author);
+  $newArticle.find('address a').html(this.author);
   $newArticle.find('address a').attr(this.authorUrl);
-  $newArticle.find('.template h1').text(this.title);
-  $newArticle.find('.article-body').text(this.body);
-  $newArticle.find('article time').text(this.publishedOn);
+  $newArticle.find('.title').html(this.title);
+  $newArticle.find('.article-body').html(this.body);
+  $newArticle.find('article time').html(this.publishedOn);
 
   // REVIEW: Display the date as a relative number of 'days ago'
   $newArticle.find('time').html('about ' + parseInt((new Date() - new Date(this.publishedOn))/60/60/24/1000) + ' days ago');
@@ -57,20 +58,7 @@ rawData.sort(function(a,b) {
 rawData.forEach( element => {
   articles.push(new Article(element));
 });
-// for(let i = 0; i < rawData.length; i++) {
-//   articles.push(new Article(rawData[i]));
-// }
-// console.log(rawData);
-
 
 articles.forEach(function(element) {
-  // console.log(element.toHtml());
-
-  // console.log($('#articles'));
   $('#articles').append(element.toHtml());
-  console.log("hello");
 });
-console.log("goodbye");
-// for(let i = 0; i < articles.length; i++) {
-//   $('#articles').append(articles[i].toHtml());
-// }
